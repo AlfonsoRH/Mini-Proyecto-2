@@ -1,0 +1,98 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    100
+    50
+    75
+    A102010
+    A191019
+    EPSILON
+    K102010
+    K191019
+    M102010
+    M191019
+    M701070
+    P102010
+    P191019
+    P701070
+    else
+    eo
+    go
+
+Grammar
+
+Rule 0     S' -> expr
+Rule 1     expr -> A701070
+Rule 2     expr -> K701070
+Rule 3     expr -> EXIT
+
+Terminals, with rules where they appear
+
+100                  : 
+50                   : 
+75                   : 
+A102010              : 
+A191019              : 
+A701070              : 1
+EPSILON              : 
+EXIT                 : 3
+K102010              : 
+K191019              : 
+K701070              : 2
+M102010              : 
+M191019              : 
+M701070              : 
+P102010              : 
+P191019              : 
+P701070              : 
+else                 : 
+eo                   : 
+error                : 
+go                   : 
+
+Nonterminals, with rules where they appear
+
+expr                 : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expr
+    (1) expr -> . A701070
+    (2) expr -> . K701070
+    (3) expr -> . EXIT
+
+    A701070         shift and go to state 2
+    K701070         shift and go to state 3
+    EXIT            shift and go to state 4
+
+    expr                           shift and go to state 1
+
+state 1
+
+    (0) S' -> expr .
+
+
+
+state 2
+
+    (1) expr -> A701070 .
+
+    $end            reduce using rule 1 (expr -> A701070 .)
+
+
+state 3
+
+    (2) expr -> K701070 .
+
+    $end            reduce using rule 2 (expr -> K701070 .)
+
+
+state 4
+
+    (3) expr -> EXIT .
+
+    $end            reduce using rule 3 (expr -> EXIT .)
+
