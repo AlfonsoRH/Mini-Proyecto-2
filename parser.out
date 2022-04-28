@@ -1,98 +1,88 @@
 Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
-Unused terminals:
-
-    100
-    50
-    75
-    A102010
-    A191019
-    EPSILON
-    K102010
-    K191019
-    M102010
-    M191019
-    M701070
-    P102010
-    P191019
-    P701070
-    else
-    eo
-    go
-
 Grammar
 
-Rule 0     S' -> expr
-Rule 1     expr -> A701070
-Rule 2     expr -> K701070
-Rule 3     expr -> EXIT
+Rule 0     S' -> S
+Rule 1     S -> A701070
+Rule 2     S -> K701070
+Rule 3     expr -> P701070
+Rule 4     expr -> M701070
+Rule 5     expr -> A191019
+Rule 6     expr -> A102010
+Rule 7     expr -> K102010
+Rule 8     expr -> P102010
+Rule 9     expr -> M102010
+Rule 10    expr -> K191019
+Rule 11    expr -> P191019
+Rule 12    expr -> M191019
+Rule 13    expr -> EPSILON
+Rule 14    expr -> eo
+Rule 15    expr -> go
+Rule 16    expr -> else
+Rule 17    expr -> 50
+Rule 18    expr -> 75
+Rule 19    expr -> 100
+Rule 20    exit -> EXIT
 
 Terminals, with rules where they appear
 
-100                  : 
-50                   : 
-75                   : 
-A102010              : 
-A191019              : 
+100                  : 19
+50                   : 17
+75                   : 18
+A102010              : 6
+A191019              : 5
 A701070              : 1
-EPSILON              : 
-EXIT                 : 3
-K102010              : 
-K191019              : 
+EPSILON              : 13
+EXIT                 : 20
+K102010              : 7
+K191019              : 10
 K701070              : 2
-M102010              : 
-M191019              : 
-M701070              : 
-P102010              : 
-P191019              : 
-P701070              : 
-else                 : 
-eo                   : 
+M102010              : 9
+M191019              : 12
+M701070              : 4
+P102010              : 8
+P191019              : 11
+P701070              : 3
+else                 : 16
+eo                   : 14
 error                : 
-go                   : 
+go                   : 15
 
 Nonterminals, with rules where they appear
 
-expr                 : 0
+S                    : 0
+exit                 : 
+expr                 : 
 
 Parsing method: LALR
 
 state 0
 
-    (0) S' -> . expr
-    (1) expr -> . A701070
-    (2) expr -> . K701070
-    (3) expr -> . EXIT
+    (0) S' -> . S
+    (1) S -> . A701070
+    (2) S -> . K701070
 
     A701070         shift and go to state 2
     K701070         shift and go to state 3
-    EXIT            shift and go to state 4
 
-    expr                           shift and go to state 1
+    S                              shift and go to state 1
 
 state 1
 
-    (0) S' -> expr .
+    (0) S' -> S .
 
 
 
 state 2
 
-    (1) expr -> A701070 .
+    (1) S -> A701070 .
 
-    $end            reduce using rule 1 (expr -> A701070 .)
+    $end            reduce using rule 1 (S -> A701070 .)
 
 
 state 3
 
-    (2) expr -> K701070 .
+    (2) S -> K701070 .
 
-    $end            reduce using rule 2 (expr -> K701070 .)
-
-
-state 4
-
-    (3) expr -> EXIT .
-
-    $end            reduce using rule 3 (expr -> EXIT .)
+    $end            reduce using rule 2 (S -> K701070 .)
 

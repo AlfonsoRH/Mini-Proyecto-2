@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = '100 50 75 A102010 A191019 A701070 EPSILON EXIT K102010 K191019 K701070 M102010 M191019 M701070 P102010 P191019 P701070 else eo goexpr : A701070expr : K701070expr : EXIT'
+_lr_signature = '100 50 75 A102010 A191019 A701070 EPSILON EXIT K102010 K191019 K701070 M102010 M191019 M701070 P102010 P191019 P701070 else eo goS : A701070S : K701070expr : P701070expr : M701070expr : A191019expr : A102010expr : K102010expr : P102010expr : M102010expr : K191019expr : P191019expr : M191019expr : EPSILONexpr : eoexpr : goexpr : elseexpr : 50expr : 75expr : 100exit : EXIT'
     
-_lr_action_items = {'A701070':([0,],[2,]),'K701070':([0,],[3,]),'EXIT':([0,],[4,]),'$end':([1,2,3,4,],[0,-1,-2,-3,]),}
+_lr_action_items = {'A701070':([0,],[2,]),'K701070':([0,],[3,]),'$end':([1,2,3,],[0,-1,-2,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'expr':([0,],[1,]),}
+_lr_goto_items = {'S':([0,],[1,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -26,8 +26,25 @@ for _k, _v in _lr_goto_items.items():
        _lr_goto[_x][_k] = _y
 del _lr_goto_items
 _lr_productions = [
-  ("S' -> expr","S'",1,None,None,None),
-  ('expr -> A701070','expr',1,'p_expr_A701070','main.py',6),
-  ('expr -> K701070','expr',1,'p_expr_K701070','main.py',10),
-  ('expr -> EXIT','expr',1,'p_EXIT','main.py',15),
+  ("S' -> S","S'",1,None,None,None),
+  ('S -> A701070','S',1,'p_A_A701070','main.py',6),
+  ('S -> K701070','S',1,'p_A_K701070','main.py',9),
+  ('expr -> P701070','expr',1,'p_expr_P701070','main.py',13),
+  ('expr -> M701070','expr',1,'p_expr_M701070','main.py',17),
+  ('expr -> A191019','expr',1,'p_expr_A191019','main.py',21),
+  ('expr -> A102010','expr',1,'p_expr_A102010','main.py',25),
+  ('expr -> K102010','expr',1,'p_expr_K102010','main.py',29),
+  ('expr -> P102010','expr',1,'p_expr_P102010','main.py',33),
+  ('expr -> M102010','expr',1,'p_expr_M102010','main.py',37),
+  ('expr -> K191019','expr',1,'p_expr_K191019','main.py',41),
+  ('expr -> P191019','expr',1,'p_expr_P191019','main.py',45),
+  ('expr -> M191019','expr',1,'p_expr_M191019','main.py',49),
+  ('expr -> EPSILON','expr',1,'p_expr_EPSILON','main.py',53),
+  ('expr -> eo','expr',1,'p_expr_eo','main.py',57),
+  ('expr -> go','expr',1,'p_expr_go','main.py',61),
+  ('expr -> else','expr',1,'p_expr_else','main.py',65),
+  ('expr -> 50','expr',1,'p_expr_50','main.py',69),
+  ('expr -> 75','expr',1,'p_expr_75','main.py',73),
+  ('expr -> 100','expr',1,'p_expr_100','main.py',77),
+  ('exit -> EXIT','exit',1,'p_EXIT','main.py',82),
 ]

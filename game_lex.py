@@ -1,5 +1,6 @@
 import ply.lex as lex
 
+
 tokens = (
    'A701070',
    'K701070',
@@ -20,7 +21,7 @@ tokens = (
    '50',
    '75',
    '100',
-   'EXIT'
+   'EXIT',
 )
 
 t_A701070 = r'A701070'
