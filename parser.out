@@ -2,9 +2,9 @@ Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
 Grammar
 
-Rule 0     S' -> S
-Rule 1     S -> A701070
-Rule 2     S -> K701070
+Rule 0     S' -> expr
+Rule 1     expr -> A701070
+Rule 2     expr -> K701070
 Rule 3     expr -> P701070
 Rule 4     expr -> M701070
 Rule 5     expr -> A191019
@@ -22,7 +22,7 @@ Rule 16    expr -> else
 Rule 17    expr -> 50
 Rule 18    expr -> 75
 Rule 19    expr -> 100
-Rule 20    exit -> EXIT
+Rule 20    expr -> EXIT
 
 Terminals, with rules where they appear
 
@@ -50,39 +50,199 @@ go                   : 15
 
 Nonterminals, with rules where they appear
 
-S                    : 0
-exit                 : 
-expr                 : 
+expr                 : 0
 
 Parsing method: LALR
 
 state 0
 
-    (0) S' -> . S
-    (1) S -> . A701070
-    (2) S -> . K701070
+    (0) S' -> . expr
+    (1) expr -> . A701070
+    (2) expr -> . K701070
+    (3) expr -> . P701070
+    (4) expr -> . M701070
+    (5) expr -> . A191019
+    (6) expr -> . A102010
+    (7) expr -> . K102010
+    (8) expr -> . P102010
+    (9) expr -> . M102010
+    (10) expr -> . K191019
+    (11) expr -> . P191019
+    (12) expr -> . M191019
+    (13) expr -> . EPSILON
+    (14) expr -> . eo
+    (15) expr -> . go
+    (16) expr -> . else
+    (17) expr -> . 50
+    (18) expr -> . 75
+    (19) expr -> . 100
+    (20) expr -> . EXIT
 
     A701070         shift and go to state 2
     K701070         shift and go to state 3
+    P701070         shift and go to state 4
+    M701070         shift and go to state 5
+    A191019         shift and go to state 6
+    A102010         shift and go to state 7
+    K102010         shift and go to state 8
+    P102010         shift and go to state 9
+    M102010         shift and go to state 10
+    K191019         shift and go to state 11
+    P191019         shift and go to state 12
+    M191019         shift and go to state 13
+    EPSILON         shift and go to state 14
+    eo              shift and go to state 15
+    go              shift and go to state 16
+    else            shift and go to state 17
+    50              shift and go to state 18
+    75              shift and go to state 19
+    100             shift and go to state 20
+    EXIT            shift and go to state 21
 
-    S                              shift and go to state 1
+    expr                           shift and go to state 1
 
 state 1
 
-    (0) S' -> S .
+    (0) S' -> expr .
 
 
 
 state 2
 
-    (1) S -> A701070 .
+    (1) expr -> A701070 .
 
-    $end            reduce using rule 1 (S -> A701070 .)
+    $end            reduce using rule 1 (expr -> A701070 .)
 
 
 state 3
 
-    (2) S -> K701070 .
+    (2) expr -> K701070 .
 
-    $end            reduce using rule 2 (S -> K701070 .)
+    $end            reduce using rule 2 (expr -> K701070 .)
+
+
+state 4
+
+    (3) expr -> P701070 .
+
+    $end            reduce using rule 3 (expr -> P701070 .)
+
+
+state 5
+
+    (4) expr -> M701070 .
+
+    $end            reduce using rule 4 (expr -> M701070 .)
+
+
+state 6
+
+    (5) expr -> A191019 .
+
+    $end            reduce using rule 5 (expr -> A191019 .)
+
+
+state 7
+
+    (6) expr -> A102010 .
+
+    $end            reduce using rule 6 (expr -> A102010 .)
+
+
+state 8
+
+    (7) expr -> K102010 .
+
+    $end            reduce using rule 7 (expr -> K102010 .)
+
+
+state 9
+
+    (8) expr -> P102010 .
+
+    $end            reduce using rule 8 (expr -> P102010 .)
+
+
+state 10
+
+    (9) expr -> M102010 .
+
+    $end            reduce using rule 9 (expr -> M102010 .)
+
+
+state 11
+
+    (10) expr -> K191019 .
+
+    $end            reduce using rule 10 (expr -> K191019 .)
+
+
+state 12
+
+    (11) expr -> P191019 .
+
+    $end            reduce using rule 11 (expr -> P191019 .)
+
+
+state 13
+
+    (12) expr -> M191019 .
+
+    $end            reduce using rule 12 (expr -> M191019 .)
+
+
+state 14
+
+    (13) expr -> EPSILON .
+
+    $end            reduce using rule 13 (expr -> EPSILON .)
+
+
+state 15
+
+    (14) expr -> eo .
+
+    $end            reduce using rule 14 (expr -> eo .)
+
+
+state 16
+
+    (15) expr -> go .
+
+    $end            reduce using rule 15 (expr -> go .)
+
+
+state 17
+
+    (16) expr -> else .
+
+    $end            reduce using rule 16 (expr -> else .)
+
+
+state 18
+
+    (17) expr -> 50 .
+
+    $end            reduce using rule 17 (expr -> 50 .)
+
+
+state 19
+
+    (18) expr -> 75 .
+
+    $end            reduce using rule 18 (expr -> 75 .)
+
+
+state 20
+
+    (19) expr -> 100 .
+
+    $end            reduce using rule 19 (expr -> 100 .)
+
+
+state 21
+
+    (20) expr -> EXIT .
+
+    $end            reduce using rule 20 (expr -> EXIT .)
 

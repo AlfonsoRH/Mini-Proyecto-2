@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = '100 50 75 A102010 A191019 A701070 EPSILON EXIT K102010 K191019 K701070 M102010 M191019 M701070 P102010 P191019 P701070 else eo goS : A701070S : K701070expr : P701070expr : M701070expr : A191019expr : A102010expr : K102010expr : P102010expr : M102010expr : K191019expr : P191019expr : M191019expr : EPSILONexpr : eoexpr : goexpr : elseexpr : 50expr : 75expr : 100exit : EXIT'
+_lr_signature = '100 50 75 A102010 A191019 A701070 EPSILON EXIT K102010 K191019 K701070 M102010 M191019 M701070 P102010 P191019 P701070 else eo goexpr : A701070expr : K701070expr : P701070expr : M701070expr : A191019expr : A102010expr : K102010expr : P102010expr : M102010expr : K191019expr : P191019expr : M191019expr : EPSILONexpr : eoexpr : goexpr : elseexpr : 50expr : 75expr : 100expr : EXIT'
     
-_lr_action_items = {'A701070':([0,],[2,]),'K701070':([0,],[3,]),'$end':([1,2,3,],[0,-1,-2,]),}
+_lr_action_items = {'A701070':([0,],[2,]),'K701070':([0,],[3,]),'P701070':([0,],[4,]),'M701070':([0,],[5,]),'A191019':([0,],[6,]),'A102010':([0,],[7,]),'K102010':([0,],[8,]),'P102010':([0,],[9,]),'M102010':([0,],[10,]),'K191019':([0,],[11,]),'P191019':([0,],[12,]),'M191019':([0,],[13,]),'EPSILON':([0,],[14,]),'eo':([0,],[15,]),'go':([0,],[16,]),'else':([0,],[17,]),'50':([0,],[18,]),'75':([0,],[19,]),'100':([0,],[20,]),'EXIT':([0,],[21,]),'$end':([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,],[0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'S':([0,],[1,]),}
+_lr_goto_items = {'expr':([0,],[1,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -26,9 +26,9 @@ for _k, _v in _lr_goto_items.items():
        _lr_goto[_x][_k] = _y
 del _lr_goto_items
 _lr_productions = [
-  ("S' -> S","S'",1,None,None,None),
-  ('S -> A701070','S',1,'p_A_A701070','main.py',6),
-  ('S -> K701070','S',1,'p_A_K701070','main.py',9),
+  ("S' -> expr","S'",1,None,None,None),
+  ('expr -> A701070','expr',1,'p_A_A701070','main.py',6),
+  ('expr -> K701070','expr',1,'p_expr_K701070','main.py',9),
   ('expr -> P701070','expr',1,'p_expr_P701070','main.py',13),
   ('expr -> M701070','expr',1,'p_expr_M701070','main.py',17),
   ('expr -> A191019','expr',1,'p_expr_A191019','main.py',21),
@@ -46,5 +46,5 @@ _lr_productions = [
   ('expr -> 50','expr',1,'p_expr_50','main.py',69),
   ('expr -> 75','expr',1,'p_expr_75','main.py',73),
   ('expr -> 100','expr',1,'p_expr_100','main.py',77),
-  ('exit -> EXIT','exit',1,'p_EXIT','main.py',82),
+  ('expr -> EXIT','expr',1,'p_EXIT','main.py',82),
 ]
