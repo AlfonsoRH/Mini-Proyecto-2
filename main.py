@@ -1,107 +1,160 @@
+import numpy as np
 import ply.yacc as yacc
+
 from game_lex import tokens
 import sys
 
-def p_A_A701070(t):
-    'expr : A701070'
 
-def p_expr_K701070(p):
-    'expr : K701070'
-    print("K701070")
+         # [POINTS   POWER   BOSS_LIFE   LEVEL]
 
-def p_expr_P701070(p):
-    'expr : P701070'
-    print("P701070")
+def p_init(p):
+    's : INIT z'
+    p[0] = np.add([100, 100, 200, 1], p[2])
+    print('\n *************************** \n INITIALIZE POINTS AND POWER: \n',p[0] )
 
-def p_expr_M701070(p):
-    'expr : M701070'
-    print("M701070")
+#MACHINE_GUN_PLAYER_HIT, M191019
+def p_z_M191019(p):
+    'z : MACHINE_GUN_PLAYER_HIT ptPeZA100'
+    p[0] = np.add([20, 0, -100, 0], p[2])
+    print('\n ***************************\n  MACHINE GUN PLAYER HIT \n Points +20  \n BOSS LIFE -100 ')
 
-def p_expr_A191019(p):
-    'expr : A191019'
-    print("A191019")
 
-def p_expr_A102010(p):
-    'expr : A102010'
-    print("A102010")
+#AK47_PLAYER_HIT, A191019
+def p_z_A191019(p):
+    'z : AK47_PLAYER_HIT ptPeZA75'
+    p[0] = np.add([15, 0, -75, 0], p[2])
+    print('\n *************************** \n  AK47 PLAYER HIT \n Points +15  \n BOSS LIFE -75  ')
 
-def p_expr_K102010(p):
-    'expr : K102010'
-    print("K102010")
+#PISTOL_PLAYER_HIT, P191019
+def p_z_P191019(p):
+    'z : PISTOL_PLAYER_HIT ptPeZA50'
+    p[0] = np.add([10, 0, -50, 0], p[2])
+    print('\n *************************** \n   PISTOL PLAYER HIT \n Points +10  \n BOSS LIFE -50 ')
 
-def p_expr_P102010(p):
-    'expr : P102010'
-    print("P102010")
+#KNIFE_PLAYER_HIT, K191019
+def p_z_K191019(p):
+    'z : KNIFE_PLAYER_HIT pow30'
+    p[0] = np.add([0, -30, 0 , 0], p[2])
+    print('\n *************************** \n KNIFE PLAYER HIT \n POWER -30 ')
 
-def p_expr_M102010(p):
-    'expr : M102010'
-    print("M102010")
 
-def p_expr_K191019(p):
-    'expr : K191019'
-    print("K191019")
+#KNIFE_ENEMY_HIT, K102010
+def p_z_K102010(p):
+    'z : KNIFE_ENEMY_HIT pow30'
+    p[0] = np.add([0, -30, 0, 0], p[2])
+    print('\n *************************** \n KNIFE ENEMY HIT \n POWER -30 ')
 
-def p_expr_P191019(p):
-    'expr : P191019'
-    print("P191019")
+#PISTOL_ENEMY_HIT, P102010
+def p_z_P102010(p):
+    'z : PISTOL_ENEMY_HIT pow30'
+    p[0] = np.add([0, -30, 0, 0], p[2])
+    print('\n *************************** \n PISTOL ENEMY HIT \n POWER -30 ')
 
-def p_expr_M191019(p):
-    'expr : M191019'
-    print("M191019")
+#AK47_ENEMY_HIT, A102010
+def p_z_A102010(p):
+    'z : AK47_ENEMY_HIT pow30'
+    p[0] = np.add([0, -30, 0, 0], p[2])
+    print('\n *************************** \n AK47 ENEMY HIT \n POWER -30 ')
 
-def p_expr_EPSILON(p):
-    'expr : EPSILON'
-    print("EPSILON")
+#MACHINE_GUN_ENEMY_HIT, M102010
+def p_z_M102010(p):
+    'z : MACHINE_GUN_ENEMY_HIT pow30'
+    p[0] = np.add([0, -30, 0, 0], p[2])
+    print('\n *************************** \n MACHINE GUN ENEMY HIT \n POWER -30 ')
 
-def p_expr_eo(p):
-    'expr : eo'
-    print("eo")
+#AK47_SAVE, A701070
+def p_z_A701070(p):
+    'z : AK47_SAVE z'
+    p[0] = np.add([0, 0, 0, 0], p[2])
+    print('\n *************************** \n AK47 SAVE ')
 
-def p_expr_go(p):
-    'expr : go'
-    print("go")
+#PISTOL_SAVE, P701070
+def p_z_P701070(p):
+    'z : PISTOL_SAVE z'
+    p[0] = np.add([0, 0, 0, 0], p[2])
+    print('\n *************************** \n PISTOL SAVE')
 
-def p_expr_else(p):
-    'expr : else'
-    print("else")
+#KNIFE_SAVE, K701070
+def p_z_K701070(p):
+    'z : KNIFE_SAVE z'
+    p[0] = np.add([0, 0, 0, 0], p[2])
+    print('\n *************************** \n KNIFE SAVE')
 
-def p_expr_50(p):
-    'expr : 50'
-    print("50")
+#MACHINE_GUN_SAVE, M701070
+def p_z_M701070(p):
+    'z : MACHINE_GUN_SAVE z'
+    p[0] = np.add([0, 0, 0, 0], p[2])
+    print('\n *************************** \n MACHINE GUN SAVE')
 
-def p_expr_75(p):
-    'expr : 75'
-    print("75")
+#ptPeZA100
+def p_ptPeZA100_z(p):
+    'ptPeZA100 : z'
+    p[0] = p[1]
+    print('\n *************************** \n POINTS AND POWER:', p[0])
 
-def p_expr_100(p):
-    'expr : 100'
-    print("100")
+#ptPeZA75
+def p_ptPeZA75_z(p):
+    'ptPeZA75 : z'
+    p[0] = p[1]
+    print('\n *************************** \n POINTS AND POWER', p[0])
 
-#EXIT
-def p_EXIT(p):
-    'expr : EXIT'
-    print("See You!")
-    sys.exit()
+#ptPeZA50
+def p_ptPeZA50_z(p):
+    'ptPeZA50 : z'
+    p[0] = p[1]
+    print('\n *************************** \n POINTS AND POWER', p[0])
 
+#pow30
+def p_pow30_z(p):
+    'pow30 : z'
+    p[0] = p[1]
+    print('\n *************************** \n POINTS AND POWER:', p[0])
+
+#ptPeZA100
+def p_ptPeZA100_end(p):
+    'ptPeZA100 : END'
+    p[0] = [100, 0, 0, 1]
+    print('\n *************************** \n REWARD:', p[0])
+  
+
+#ptPeZA75
+def p_ptPeZA75_end(p):
+    'ptPeZA75 : END'
+    p[0] =[100, 0, 0, 1]
+    print('\n *************************** \n REWARD:', p[0])
+
+
+#ptPeZA50
+def p_ptPeZA50_end(p):
+    'ptPeZA50 : END'
+    p[0] = [100, 0, 0, 1]
+    print('\n *************************** \n REWARD:', p[0])
+  
+
+#pow30
+def p_pow30_end(p):
+    'pow30 : END'
+    p[0] = [0, 0, 0, 0]
+    print('\n *************************** \n GAME OVER:', p[0])
+
+   
 # Error rule for syntax errors
 def p_error(p):
-    print("Syntax error in input!")
-
-
+    print("\n *************************** \n SYNTAX ERROR IN INPUT!")
 
 # Build the parser
 parser = yacc.yacc()
 
-
 while True:
     try:
-       s = input('Compute: > ')
+        s = input('Compute: > ')
     except EOFError:
-       break
+        break
     if not s:
-       continue
+        continue
     result = parser.parse(s)
-    print(result)
 
-  
+
+    print('\n *************************** \n [POINTS, POWER, ENEMY_LIFE, LEVEL]\n', result)
+   
 

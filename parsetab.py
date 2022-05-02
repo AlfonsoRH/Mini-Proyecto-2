@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = '100 50 75 A102010 A191019 A701070 EPSILON EXIT K102010 K191019 K701070 M102010 M191019 M701070 P102010 P191019 P701070 else eo goexpr : A701070expr : K701070expr : P701070expr : M701070expr : A191019expr : A102010expr : K102010expr : P102010expr : M102010expr : K191019expr : P191019expr : M191019expr : EPSILONexpr : eoexpr : goexpr : elseexpr : 50expr : 75expr : 100expr : EXIT'
+_lr_signature = 'AK47_ENEMY_HIT AK47_PLAYER_HIT AK47_SAVE END INIT KNIFE_ENEMY_HIT KNIFE_PLAYER_HIT KNIFE_SAVE MACHINE_GUN_ENEMY_HIT MACHINE_GUN_PLAYER_HIT MACHINE_GUN_SAVE PISTOL_ENEMY_HIT PISTOL_PLAYER_HIT PISTOL_SAVEs : INIT zz : MACHINE_GUN_PLAYER_HIT ptPeZA100z : AK47_PLAYER_HIT ptPeZA75z : PISTOL_PLAYER_HIT ptPeZA50z : KNIFE_PLAYER_HIT pow30z : KNIFE_ENEMY_HIT pow30z : PISTOL_ENEMY_HIT pow30z : AK47_ENEMY_HIT pow30z : MACHINE_GUN_ENEMY_HIT pow30z : AK47_SAVE zz : PISTOL_SAVE zz : KNIFE_SAVE zz : MACHINE_GUN_SAVE zptPeZA100 : zptPeZA75 : zptPeZA50 : zpow30 : zptPeZA100 : ENDptPeZA75 : ENDptPeZA50 : ENDpow30 : END'
     
-_lr_action_items = {'A701070':([0,],[2,]),'K701070':([0,],[3,]),'P701070':([0,],[4,]),'M701070':([0,],[5,]),'A191019':([0,],[6,]),'A102010':([0,],[7,]),'K102010':([0,],[8,]),'P102010':([0,],[9,]),'M102010':([0,],[10,]),'K191019':([0,],[11,]),'P191019':([0,],[12,]),'M191019':([0,],[13,]),'EPSILON':([0,],[14,]),'eo':([0,],[15,]),'go':([0,],[16,]),'else':([0,],[17,]),'50':([0,],[18,]),'75':([0,],[19,]),'100':([0,],[20,]),'EXIT':([0,],[21,]),'$end':([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,],[0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20,]),}
+_lr_action_items = {'INIT':([0,],[2,]),'$end':([1,3,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,],[0,-1,-2,-14,-18,-3,-15,-19,-4,-16,-20,-5,-17,-21,-6,-7,-8,-9,-10,-11,-12,-13,]),'MACHINE_GUN_PLAYER_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[4,4,4,4,4,4,4,4,4,4,4,4,4,]),'AK47_PLAYER_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[5,5,5,5,5,5,5,5,5,5,5,5,5,]),'PISTOL_PLAYER_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[6,6,6,6,6,6,6,6,6,6,6,6,6,]),'KNIFE_PLAYER_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[7,7,7,7,7,7,7,7,7,7,7,7,7,]),'KNIFE_ENEMY_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[8,8,8,8,8,8,8,8,8,8,8,8,8,]),'PISTOL_ENEMY_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[9,9,9,9,9,9,9,9,9,9,9,9,9,]),'AK47_ENEMY_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[10,10,10,10,10,10,10,10,10,10,10,10,10,]),'MACHINE_GUN_ENEMY_HIT':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[11,11,11,11,11,11,11,11,11,11,11,11,11,]),'AK47_SAVE':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[12,12,12,12,12,12,12,12,12,12,12,12,12,]),'PISTOL_SAVE':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[13,13,13,13,13,13,13,13,13,13,13,13,13,]),'KNIFE_SAVE':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[14,14,14,14,14,14,14,14,14,14,14,14,14,]),'MACHINE_GUN_SAVE':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[15,15,15,15,15,15,15,15,15,15,15,15,15,]),'END':([4,5,6,7,8,9,10,11,],[18,21,24,27,27,27,27,27,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'expr':([0,],[1,]),}
+_lr_goto_items = {'s':([0,],[1,]),'z':([2,4,5,6,7,8,9,10,11,12,13,14,15,],[3,17,20,23,26,26,26,26,26,32,33,34,35,]),'ptPeZA100':([4,],[16,]),'ptPeZA75':([5,],[19,]),'ptPeZA50':([6,],[22,]),'pow30':([7,8,9,10,11,],[25,28,29,30,31,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -26,25 +26,26 @@ for _k, _v in _lr_goto_items.items():
        _lr_goto[_x][_k] = _y
 del _lr_goto_items
 _lr_productions = [
-  ("S' -> expr","S'",1,None,None,None),
-  ('expr -> A701070','expr',1,'p_A_A701070','main.py',6),
-  ('expr -> K701070','expr',1,'p_expr_K701070','main.py',9),
-  ('expr -> P701070','expr',1,'p_expr_P701070','main.py',13),
-  ('expr -> M701070','expr',1,'p_expr_M701070','main.py',17),
-  ('expr -> A191019','expr',1,'p_expr_A191019','main.py',21),
-  ('expr -> A102010','expr',1,'p_expr_A102010','main.py',25),
-  ('expr -> K102010','expr',1,'p_expr_K102010','main.py',29),
-  ('expr -> P102010','expr',1,'p_expr_P102010','main.py',33),
-  ('expr -> M102010','expr',1,'p_expr_M102010','main.py',37),
-  ('expr -> K191019','expr',1,'p_expr_K191019','main.py',41),
-  ('expr -> P191019','expr',1,'p_expr_P191019','main.py',45),
-  ('expr -> M191019','expr',1,'p_expr_M191019','main.py',49),
-  ('expr -> EPSILON','expr',1,'p_expr_EPSILON','main.py',53),
-  ('expr -> eo','expr',1,'p_expr_eo','main.py',57),
-  ('expr -> go','expr',1,'p_expr_go','main.py',61),
-  ('expr -> else','expr',1,'p_expr_else','main.py',65),
-  ('expr -> 50','expr',1,'p_expr_50','main.py',69),
-  ('expr -> 75','expr',1,'p_expr_75','main.py',73),
-  ('expr -> 100','expr',1,'p_expr_100','main.py',77),
-  ('expr -> EXIT','expr',1,'p_EXIT','main.py',82),
+  ("S' -> s","S'",1,None,None,None),
+  ('s -> INIT z','s',2,'p_init','main.py',11),
+  ('z -> MACHINE_GUN_PLAYER_HIT ptPeZA100','z',2,'p_z_M191019','main.py',17),
+  ('z -> AK47_PLAYER_HIT ptPeZA75','z',2,'p_z_A191019','main.py',24),
+  ('z -> PISTOL_PLAYER_HIT ptPeZA50','z',2,'p_z_P191019','main.py',30),
+  ('z -> KNIFE_PLAYER_HIT pow30','z',2,'p_z_K191019','main.py',36),
+  ('z -> KNIFE_ENEMY_HIT pow30','z',2,'p_z_K102010','main.py',43),
+  ('z -> PISTOL_ENEMY_HIT pow30','z',2,'p_z_P102010','main.py',49),
+  ('z -> AK47_ENEMY_HIT pow30','z',2,'p_z_A102010','main.py',55),
+  ('z -> MACHINE_GUN_ENEMY_HIT pow30','z',2,'p_z_M102010','main.py',61),
+  ('z -> AK47_SAVE z','z',2,'p_z_A701070','main.py',67),
+  ('z -> PISTOL_SAVE z','z',2,'p_z_P701070','main.py',73),
+  ('z -> KNIFE_SAVE z','z',2,'p_z_K701070','main.py',79),
+  ('z -> MACHINE_GUN_SAVE z','z',2,'p_z_M701070','main.py',85),
+  ('ptPeZA100 -> z','ptPeZA100',1,'p_ptPeZA100_z','main.py',91),
+  ('ptPeZA75 -> z','ptPeZA75',1,'p_ptPeZA75_z','main.py',97),
+  ('ptPeZA50 -> z','ptPeZA50',1,'p_ptPeZA50_z','main.py',103),
+  ('pow30 -> z','pow30',1,'p_pow30_z','main.py',109),
+  ('ptPeZA100 -> END','ptPeZA100',1,'p_ptPeZA100_end','main.py',115),
+  ('ptPeZA75 -> END','ptPeZA75',1,'p_ptPeZA75_end','main.py',122),
+  ('ptPeZA50 -> END','ptPeZA50',1,'p_ptPeZA50_end','main.py',129),
+  ('pow30 -> END','pow30',1,'p_pow30_end','main.py',136),
 ]
